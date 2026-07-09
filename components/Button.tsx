@@ -31,7 +31,7 @@ export default function Button({
     solid:
       "bg-[#F5F2EC] text-[#111110] hover:bg-[#FFFFFF] hover:shadow-sm",
     outline:
-      "bg-transparent text-[#F5F2EC] border border-[#F5F2EC]/30 hover:border-[#F5F2EC] hover:bg-[#F5F2EC]/5 hover:text-[#111110]",
+      "bg-transparent text-[#F5F2EC] border border-[#F5F2EC]/30 hover:border-[#F5F2EC] hover:bg-[#F5F2EC] hover:text-[#111110]",
   };
 
   const classes = `${base} ${variants[variant]} ${className}`;

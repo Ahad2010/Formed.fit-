@@ -26,23 +26,24 @@ const audience = [
 export default function Designed() {
   return (
     <section className="bg-[#111110] font-body">
-      <div className="grid grid-cols-1 md:grid-cols-2">
-        <div className="relative h-[420px] md:h-[640px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="relative min-w-0 h-[60vh] overflow-hidden min-h-[500px] lg:h-auto">
           <Image
             src="/images/designed.webp"
             alt="Client stretching through a downward dog on a yoga mat at home"
             fill
-            className="object-cover"
-            sizes="(min-width: 768px) 50vw, 100vw"
+            className="object-cover object-center"
+            sizes="100vw"
           />
+          <div className="absolute inset-0 bg-[#0C0C0B]/20" />
         </div>
 
-        <div className="flex flex-col justify-center px-6 py-16 md:px-16 md:py-0">
+        <div className="flex min-w-0 flex-col justify-start px-6 pt-16 pb-16 lg:px-16 lg:pt-24 lg:pb-20">
           <p className="text-[10px] font-normal uppercase leading-[15px] tracking-[0.25em] text-[#F5F2EC]/50">
             Who It&rsquo;s For
           </p>
 
-          <h2 className="mt-4 max-w-lg font-display text-[36px] font-light leading-[1.1] text-[#F5F2EC] md:text-[55px] md:leading-[60px]">
+          <h2 className="mt-4 max-w-lg font-display text-[36px] font-light leading-[1.1] text-[#F5F2EC] lg:text-[55px] lg:leading-[60px]">
             Designed for people who value their{" "}
             <em className="italic font-normal text-[#F5F2EC]/70">time.</em>
           </h2>

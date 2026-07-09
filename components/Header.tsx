@@ -43,10 +43,10 @@ export default function Header() {
         </nav>
 
         <div className="flex justify-end items-center gap-3">
-          <Button variant="solid" href="/login" className="hidden sm:inline-flex px-6 py-3 text-[12px] tracking-[0.25em]">
+          <Button variant="solid" href="/login" className="hidden sm:inline-flex !px-6 !py-3 !text-[12px] !tracking-[0.25em]">
             Log In
           </Button>
-          <Button variant="solid" href="/apply" className="px-6 py-3 text-[12px] tracking-[0.25em]">
+          <Button variant="solid" href="/apply" className="!px-6 !py-3 !text-[12px] !tracking-[0.25em]">
             Apply Now
           </Button>
         </div>
