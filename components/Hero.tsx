@@ -1,6 +1,6 @@
 ﻿import Image from "next/image";
-import Button from "./Button";
 import Header from "./Header";
+import Button from "./Button";
 import TrustRow from "./TrustRow";
 
 export default function Hero() {
@@ -20,21 +20,12 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#111110]/60 via-transparent to-transparent" />
       </div>
 
-      {/* Thin vertical accent rule removed per request */}
-
       <div className="relative z-10 flex min-h-screen flex-col">
         <Header />
 
         {/* Hero content */}
         <div className="flex flex-1 flex-col justify-center px-6 md:px-12">
-          {/*
-            No hard <br> — the real site relies on natural text wrap inside
-            a fixed max-width, so the break point shifts with viewport width
-            (confirmed by comparing wraps at two different screen sizes).
-            Only "delivered to your home." is italic; "Personal training,"
-            stays upright.
-          */}
-          <h1 className="max-w-4xl font-display text-[109px] font-light leading-[1.05] text-[#F5F2EC] sm:text-[72px] md:text-[96px] lg:text-[109px] lg:leading-[115px]">
+          <h1 className="max-w-4xl font-display text-[56px] font-light leading-[1.05] text-[#F5F2EC] sm:text-[72px] md:text-[96px] lg:text-[109px] lg:leading-[115px]">
             Private personal training, <em className="italic font-normal">delivered to your home.</em>
           </h1>
 
@@ -45,17 +36,17 @@ export default function Hero() {
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Button   variant="solid" href="/apply">
+            <Button variant="solid" href="/apply">
               Apply for Membership
             </Button>
-            <Button   variant="outline" href="#how-it-works">
+            <Button variant="outline" href="#how-it-works">
               See How It Works
             </Button>
           </div>
         </div>
 
-        {/* Trust row */}
-        <div className="px-6 pb-10 md:px-12 md:pb-14">
+        {/* Trust row — mt-16 added so it doesn't sit too close to the buttons */}
+        <div className="mt-16 px-6 pb-10 md:px-12 md:pb-14">
           <TrustRow />
         </div>
       </div>

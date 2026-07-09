@@ -155,7 +155,7 @@ export default function Membership() {
         </ul>
 
         <div>
-          <div className="group relative h-[220px] w-full overflow-hidden">
+          <div className="group relative h-[562px] w-[900px] max-w-full overflow-hidden">
             <Image
               src="/images/membership.webp"
               alt="Close-up of hands racking a dumbbell in a home gym"
