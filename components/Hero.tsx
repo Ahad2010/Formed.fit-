@@ -5,7 +5,7 @@ import TrustRow from "./TrustRow";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#111110] font-body">
+    <section className="hero relative min-h-screen overflow-hidden bg-[#111110] font-body">
       {/* Background photo + dark overlay so type stays legible */}
       <div className="absolute inset-0">
         <Image
@@ -20,8 +20,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#111110]/60 via-transparent to-transparent" />
       </div>
 
-      {/* Thin vertical accent rule, pinned to the right edge */}
-      <div className="pointer-events-none absolute right-6 top-0 hidden h-full w-px bg-[#F5F2EC]/15 md:block" />
+      {/* Thin vertical accent rule removed per request */}
 
       <div className="relative z-10 flex min-h-screen flex-col">
         <Header />
@@ -35,7 +34,7 @@ export default function Hero() {
             Only "delivered to your home." is italic; "Personal training,"
             stays upright.
           */}
-          <h1 className="max-w-4xl font-display text-[56px] font-light leading-[1.05] text-[#F5F2EC] sm:text-[72px] md:text-[96px] lg:text-[109px] lg:leading-[115px]">
+          <h1 className="max-w-4xl font-display text-[109px] font-light leading-[1.05] text-[#F5F2EC] sm:text-[72px] md:text-[96px] lg:text-[109px] lg:leading-[115px]">
             Private personal training, <em className="italic font-normal">delivered to your home.</em>
           </h1>
 
@@ -46,10 +45,10 @@ export default function Hero() {
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Button variant="solid" href="/apply">
+            <Button   variant="solid" href="/apply">
               Apply for Membership
             </Button>
-            <Button variant="outline" href="#how-it-works">
+            <Button   variant="outline" href="#how-it-works">
               See How It Works
             </Button>
           </div>

@@ -6,7 +6,6 @@
 export default function TrustRow() {
   return (
     <div className="px-6 pb-10 md:px-12 md:pb-14">
-      <div className="h-px w-full bg-[#F5F2EC]/15" />
       <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6">
         <TrustItem
           title="Vetted Trainers"

@@ -25,13 +25,13 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center px-8 py-4 text-[13px] font-normal uppercase tracking-[0.18em] transition-colors duration-200";
+    "inline-flex items-center justify-center px-8 py-4 text-[13px] font-normal uppercase tracking-[0.18em] transition-colors duration-200 focus:outline-none";
 
   const variants: Record<Variant, string> = {
     solid:
-      "bg-[#F5F2EC] text-[#111110] hover:bg-white",
+      "bg-[#F5F2EC] text-[#111110] hover:bg-[#FFFFFF] hover:shadow-sm",
     outline:
-      "bg-transparent text-[#F5F2EC] border border-[#F5F2EC]/30 hover:border-[#F5F2EC]/70 hover:bg-[#F5F2EC]/5",
+      "bg-transparent text-[#F5F2EC] border border-[#F5F2EC]/30 hover:border-[#F5F2EC] hover:bg-[#F5F2EC]/5 hover:text-[#111110]",
   };
 
   const classes = `${base} ${variants[variant]} ${className}`;
