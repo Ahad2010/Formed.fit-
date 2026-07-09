@@ -1,5 +1,7 @@
 ﻿import Image from "next/image";
 import Button from "./Button";
+import Header from "./Header";
+import TrustRow from "./TrustRow";
 
 export default function Hero() {
   return (
@@ -22,38 +24,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute right-6 top-0 hidden h-full w-px bg-[#F5F2EC]/15 md:block" />
 
       <div className="relative z-10 flex min-h-screen flex-col">
-        {/* Nav */}
-        <header className="flex items-center justify-between px-6 py-6 md:px-12 md:py-8">
-          <div>
-             <p className="mt-1 text-[10px] uppercase tracking-[0.25em] text-[#F5F2EC]/50">
-              Tampa Bay · Private Training · 2026
-            </p>
-          </div>
-
-          <nav className="hidden items-center gap-10 text-[13px] uppercase tracking-[0.15em] text-[#F5F2EC]/80 lg:flex">
-            <a href="#services" className="transition-colors hover:text-[#F5F2EC]">
-              Services
-            </a>
-            <a href="#about" className="transition-colors hover:text-[#F5F2EC]">
-              About
-            </a>
-            <a href="#faq" className="transition-colors hover:text-[#F5F2EC]">
-              FAQ
-            </a>
-            <a href="#tampa-bay" className="transition-colors hover:text-[#F5F2EC]">
-              Tampa Bay
-            </a>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <Button variant="outline" href="/login" className="hidden sm:inline-flex">
-              Log In
-            </Button>
-            <Button variant="solid" href="/apply">
-              Apply Now
-            </Button>
-          </div>
-        </header>
+        <Header />
 
         {/* Hero content */}
         <div className="flex flex-1 flex-col justify-center px-6 md:px-12">
@@ -86,32 +57,9 @@ export default function Hero() {
 
         {/* Trust row */}
         <div className="px-6 pb-10 md:px-12 md:pb-14">
-          <div className="h-px w-full bg-[#F5F2EC]/15" />
-          <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-6">
-            <TrustItem
-              title="Vetted Trainers"
-              copy="Every trainer certified & background checked"
-            />
-            <TrustItem
-              title="Equipment Included"
-              copy="Professional gear at every session"
-            />
-            <TrustItem
-              title="Not a Marketplace"
-              copy="Direct, curated training experience"
-            />
-          </div>
+          <TrustRow />
         </div>
       </div>
     </section>
-  );
-}
-
-function TrustItem({ title, copy }: { title: string; copy: string }) {
-  return (
-    <div>
-      <p className="text-[15px] font-medium text-[#F5F2EC]">{title}</p>
-      <p className="mt-1 text-sm font-light text-[#F5F2EC]/50">{copy}</p>
-    </div>
   );
 }
