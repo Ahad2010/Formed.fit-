@@ -1,9 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const platform = ["How It Works", "Services", "Membership", "Tampa Bay"];
-const company = ["About", "Train With Us", "FAQ", "Contact"];
-const legal = ["Terms of Service", "Privacy Policy", "Liability Waiver"];
+const platform = [
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "Services", href: "/services" },
+  { label: "Membership", href: "/apply" },
+  { label: "Tampa Bay", href: "/tampa" },
+];
+const company = [
+  { label: "About", href: "/about" },
+  { label: "Train With Us", href: "/trainers" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/contact" },
+];
+const legal = [
+  { label: "Terms of Service", href: "/terms" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Liability Waiver", href: "/waiver" },
+];
 
 export default function Footer() {
   return (
@@ -60,7 +74,7 @@ export default function Footer() {
   );
 }
 
-function FooterColumn({ title, links }: { title: string; links: string[] }) {
+function FooterColumn({ title, links }: { title: string; links: { label: string; href: string }[] }) {
   return (
     <div>
       <p className="text-[10px] font-normal uppercase tracking-[0.2em] text-[#8C8880]">
@@ -68,12 +82,12 @@ function FooterColumn({ title, links }: { title: string; links: string[] }) {
       </p>
       <ul className="mt-4 flex flex-col gap-3">
         {links.map((link) => (
-          <li key={link}>
+          <li key={link.label}>
             <Link
-              href="#"
-              className="text-[14px] font-normal leading-[20px] text-[#F5F2EC] transition-colors hover:text-[#F5F2EC]/70"
+              href={link.href}
+              className="text-[14px] font-normal leading-[20px] text-[#F5F2EC]/60 transition-colors hover:text-[#F5F2EC]"
             >
-              {link}
+              {link.label}
             </Link>
           </li>
         ))}

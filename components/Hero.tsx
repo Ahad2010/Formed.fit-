@@ -24,9 +24,12 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#111110] via-[#111110]/40 to-transparent" />
       </div>
 
-      {/* Content — pushed to bottom, top padding clears header */}
-      <div className="relative z-10 max-w-screen-xl mx-auto px-6 lg:px-10 pt-28 pb-16 lg:pt-32 lg:pb-24 w-full">
+      {/* Content — pushed to bottom */}
+      <div className="relative z-10 max-w-screen-xl mx-auto px-6 lg:px-10 pt-16 pb-16 lg:pt-20 lg:pb-20 w-full">
         <div className="max-w-3xl">
+          <p className="mb-6 text-[10px] tracking-[0.25em] uppercase text-[#F5F2EC]/50">
+            Tampa Bay · Private Training · 2026
+          </p>
 
           <h1 className="font-display font-light text-[#F5F2EC] leading-[1.05]" style={{ fontSize: "clamp(3rem, 8vw, 7rem)" }}>
             Private personal training, <em className="font-light italic text-[#E8E4DC]">delivered to your home.</em>
@@ -85,6 +88,11 @@ export default function Hero() {
             <p className="text-[#F5F2EC]/40 text-[10px] leading-snug mt-1 font-body">Direct, curated training experience</p>
           </div>
         </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 right-8 lg:right-10 z-10 flex flex-col items-center gap-2 opacity-40">
+        <div className="w-px h-16 bg-[#F5F2EC]/60" style={{ animation: "pulse 2s ease-in-out infinite" }} />
       </div>
     </section>
   );

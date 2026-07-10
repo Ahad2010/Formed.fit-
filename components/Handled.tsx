@@ -42,7 +42,7 @@ export default function Handled() {
     <section className="bg-[#F3F0E9] font-body pb-16 lg:pb-20">
       <div className="mx-auto max-w-[1400px] px-6 py-16 md:px-12 md:py-20">
         <p className="text-[10px] font-normal uppercase tracking-[0.25em] text-[#C2996B]">
-          Why Formed
+          Why FORMED
         </p>
 
         <h2 className="mt-4 max-w-2xl font-display text-[40px] font-light leading-[1.05] text-[#0C0C0B] md:text-[56px] lg:text-[68px] lg:leading-[85px]">

@@ -32,11 +32,13 @@ const tiers = [
 ];
 
 const features = [
+  "Dedicated personal trainer",
+  "In-home or private-space sessions",
+  "Equipment provided by trainer",
+  "Customised programme",
   "Session notes after every session",
   "Monthly progress reviews",
   "Consistent weekly schedule",
-  "Dedicated personal trainer",
-  "In-home or private-space sessions",
 ];
 
 export default function Membership() {
@@ -129,7 +131,11 @@ export default function Membership() {
 
       {/* Feature list + image/CTA */}
       <div className="mt-20 grid grid-cols-1 gap-12 px-6 pb-16 md:px-12 lg:grid-cols-2 lg:gap-16 lg:pb-20">
-        <ul className="border-t border-[#F5F2EC]/10">
+        <div>
+          <p className="mb-6 text-[10px] font-normal uppercase tracking-[0.25em] text-[#C8C2B4]/40">
+            Every membership includes
+          </p>
+          <ul className="border-t border-[#F5F2EC]/10">
           {features.map((item) => (
             <li
               key={item}
@@ -140,6 +146,7 @@ export default function Membership() {
             </li>
           ))}
         </ul>
+        </div>
 
         <div>
           <div

@@ -28,27 +28,20 @@ export default function Header() {
         }`}
       >
         <div className="mx-auto flex h-20 max-w-screen-xl items-center justify-between px-6 lg:h-24 lg:px-10">
-          {/* Logo + subtitle */}
+          {/* Logo */}
           <Link href="/" className="relative z-10 flex items-center">
-            <div>
-              <div className={`relative transition-all duration-500 ${
-                scrolled ? "h-6 w-[120px] md:h-6 md:w-[130px]" : "h-7 w-[150px] md:h-8 md:w-[180px]"
-              }`}>
-                <Image
-                  src="/images/logo.webp"
-                  alt="FORMED"
-                  fill
-                  priority
-                  className={`object-contain object-left transition-all duration-500 ${
-                    scrolled ? "brightness-0" : ""
-                  }`}
-                />
-              </div>
-              <p className={`text-[10px] font-normal uppercase tracking-[0.25em] transition-all duration-500 ${
-                scrolled ? "hidden" : "mt-1 text-[#F5F2EC]/50"
-              }`}>
-                Tampa Bay · Private Training
-              </p>
+            <div className={`relative transition-all duration-500 ${
+              scrolled ? "h-6 w-[120px] md:h-6 md:w-[130px]" : "h-7 w-[150px] md:h-8 md:w-[180px]"
+            }`}>
+              <Image
+                src="/images/logo.webp"
+                alt="FORMED"
+                fill
+                priority
+                className={`object-contain object-left transition-all duration-500 ${
+                  scrolled ? "brightness-0" : ""
+                }`}
+              />
             </div>
           </Link>
 

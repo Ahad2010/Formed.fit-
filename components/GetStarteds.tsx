@@ -33,7 +33,7 @@ export default function GetStarted() {
         <h2 className="mt-6 font-display text-[44px] font-light leading-[1.15] text-[#F5F2EC] md:text-[72px] md:leading-[1.1] lg:text-[96px] lg:leading-[143px]">
           Train smarter.
           <br />
-          <em className="italic font-normal">We handle the rest.</em>
+          <em className="italic font-light text-[#c2bcb1]">We handle the rest.</em>
         </h2>
 
         <p className="mt-6 max-w-lg text-[16px] font-normal leading-[26px] text-[#F5F2EC]/50">
