@@ -9,15 +9,6 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
 }
 
-/**
- * Matches the two button styles inspected on the FORMED hero:
- * - solid:   cream fill (#F5F2EC), dark text, sharp corners, uppercase, wide tracking
- * - outline: transparent fill, hairline border, cream text, same corners/tracking
- *
- * Label typography per WhatFont: DM Sans 500, 10px/15px, near-black (#0C0C0B).
- * Sharp corners (no border-radius) + uppercase + letter-spacing is the
- * signature of this button system — keep both consistent across the app.
- */
 export default function Button({
   variant = "solid",
   href,
@@ -26,13 +17,13 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const base =
-    "inline-flex items-center justify-center px-8 py-4 text-[10px] font-medium leading-[15px] uppercase tracking-[0.18em] transition-colors duration-200";
+    "inline-flex items-center justify-center px-12 py-5 text-[10px] font-medium leading-[15px] uppercase tracking-[0.25em] transition-all duration-300";
 
   const variants: Record<Variant, string> = {
     solid:
-      "bg-[#F5F2EC] text-[#0C0C0B] hover:bg-white",
+      "bg-[#F5F2EC] text-[#0C0C0B] border border-[#F5F2EC] hover:bg-[#E8E4DC]",
     outline:
-      "bg-transparent text-[#F5F2EC] border border-[#F5F2EC]/30 hover:border-white hover:bg-[#F5F2EC]/5",
+      "bg-transparent text-[#F5F2EC]/70 border border-[#F5F2EC]/30 opacity-80 hover:opacity-100 hover:border-white hover:text-[#F5F2EC]",
   };
 
   const classes = `${base} ${variants[variant]} ${className}`;

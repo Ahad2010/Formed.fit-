@@ -26,19 +26,20 @@ const audience = [
 export default function Designed() {
   return (
     <section className="bg-[#111110] font-body">
-      <div className="grid grid-cols-1 lg:grid-cols-2">
-        <div className="relative min-w-0 h-[60vh] overflow-hidden min-h-[500px] lg:h-auto">
-          <Image
-            src="/images/designed.webp"
-            alt="Client stretching through a downward dog on a yoga mat at home"
-            fill
-            className="object-cover object-center"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-[#0C0C0B]/20" />
-        </div>
+      <div className="mx-auto max-w-screen-xl px-6 lg:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="group relative min-w-0 h-[60vh] overflow-hidden min-h-[500px] lg:h-auto">
+            <Image
+              src="/images/designed.webp"
+              alt="Client stretching through a downward dog on a yoga mat at home"
+              fill
+              className="object-cover object-center transition-transform duration-700 ease-out will-change-transform group-hover:scale-110"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-[#0C0C0B]/20" />
+          </div>
 
-        <div className="flex min-w-0 flex-col justify-start px-6 pt-16 pb-16 lg:px-16 lg:pt-24 lg:pb-20">
+          <div className="flex min-w-0 flex-col justify-start pt-16 pb-16 lg:px-10 lg:pt-24 lg:pb-20">
           <p className="text-[10px] font-normal uppercase leading-[15px] tracking-[0.25em] text-[#F5F2EC]/50">
             Who It&rsquo;s For
           </p>
@@ -64,6 +65,7 @@ export default function Designed() {
               </li>
             ))}
           </ul>
+        </div>
         </div>
       </div>
     </section>

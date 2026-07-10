@@ -1,15 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-
-/**
- * Typography per WhatFont inspection:
- * - Column eyebrows (PLATFORM/COMPANY/LEGAL): DM Sans 400, 10px/15px,
- *   muted gray-brown (rgb(140,136,128) → #8C8880).
- * - Nav links (How It Works, About, etc.): DM Sans 400, 14px/20px,
- *   full-opacity cream (#F5F2EC).
- * - Tagline paragraph: DM Sans 400, 14px/23px, tan (rgb(200,194,180) → #C8C2B4).
- * - Bottom bar (copyright / "New cities launching soon"): same muted tan,
- *   smaller and tracked, matching the visual weight in the screenshot.
- */
 
 const platform = ["How It Works", "Services", "Membership", "Tampa Bay"];
 const company = ["About", "Train With Us", "FAQ", "Contact"];
@@ -18,12 +8,18 @@ const legal = ["Terms of Service", "Privacy Policy", "Liability Waiver"];
 export default function Footer() {
   return (
     <footer className="bg-[#111110] font-body">
-      <div className="mx-auto max-w-[1400px] px-6 py-16 md:px-12 md:py-20">
+      <div className="mx-auto max-w-screen-xl px-6 py-16 lg:px-10 lg:py-20">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-8">
           <div>
-            <span className="font-display text-xl font-light tracking-[0.3em] text-[#F5F2EC]">
-              FORMED
-            </span>
+            {/* Logo */}
+            <div className="relative h-6 w-[140px] md:h-7 md:w-[164px]">
+              <Image
+                src="/images/logo.webp"
+                alt="FORMED"
+                fill
+                className="object-contain object-left"
+              />
+            </div>
 
             <p className="mt-4 max-w-[240px] text-[14px] font-normal leading-[23px] text-[#C8C2B4]">
               Private, in-home personal training for busy professionals.
@@ -34,13 +30,13 @@ export default function Footer() {
             </p>
 
             <div className="mt-4 flex items-center gap-4">
-              <Link href="#" aria-label="Instagram" className="text-[#F5F2EC]/60 transition-colors hover:text-[#F5F2EC]">
+              <Link href="https://www.instagram.com/getformed.fit" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-[#F5F2EC]/60 transition-colors hover:text-[#F5F2EC]">
                 <InstagramIcon />
               </Link>
-              <Link href="#" aria-label="LinkedIn" className="text-[#F5F2EC]/60 transition-colors hover:text-[#F5F2EC]">
+              <Link href="https://www.linkedin.com/company/getformed/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-[#F5F2EC]/60 transition-colors hover:text-[#F5F2EC]">
                 <LinkedInIcon />
               </Link>
-              <Link href="#" aria-label="Facebook" className="text-[#F5F2EC]/60 transition-colors hover:text-[#F5F2EC]">
+              <Link href="https://www.facebook.com/share/18GmmXdMCH/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-[#F5F2EC]/60 transition-colors hover:text-[#F5F2EC]">
                 <FacebookIcon />
               </Link>
             </div>
@@ -53,7 +49,7 @@ export default function Footer() {
 
         <div className="mt-16 flex flex-col gap-4 border-t border-[#F5F2EC]/10 pt-8 md:flex-row md:items-center md:justify-between">
           <p className="text-[12px] font-normal text-[#C8C2B4]/70">
-            © 2026 FORMED. All rights reserved.
+            &copy; 2026 FORMED. All rights reserved.
           </p>
           <p className="text-[10px] font-normal uppercase tracking-[0.2em] text-[#8C8880]">
             New cities launching soon

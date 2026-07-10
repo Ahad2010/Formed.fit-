@@ -1,17 +1,7 @@
-import Image from "next/image";
+"use client";
 
-/**
- * Typography per WhatFont inspection:
- * - Heading "Simple. Consistent. Effective.": Cormorant Garamond 300, 68px/85px.
- *   "Simple. Consistent." near-black (#0C0C0B), "Effective." italic + muted (#8C8880).
- * - Numerals (01/02/03): Cormorant Garamond 300, 60px, very pale (#E8E4DC) — decorative, low-contrast on purpose.
- * - Step titles: Cormorant Garamond 500, 24px/32px, near-black.
- * - Step descriptions: DM Sans 400, 14px/23px, muted gray-brown (#8C8880).
- *
- * Note: exact eyebrow/intro-paragraph accent color wasn't fully legible in the
- * inspector screenshot — using a warm clay tone to match the visual. Send a
- * WhatFont capture of just that element if it needs adjusting.
- */
+import Image from "next/image";
+import { useState } from "react";
 
 const steps = [
   {
@@ -38,8 +28,10 @@ const steps = [
 ];
 
 export default function Effective() {
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+
   return (
-    <section className="bg-[#F3F0E9] font-body">
+    <section className="bg-[#F3F0E9] font-body pb-16 lg:pb-20">
       <div className="mx-auto max-w-[1400px] px-6 py-16 md:px-12 md:py-20">
         <p className="text-[12px] font-medium uppercase tracking-[0.2em] text-[#8C8880]">
           The Process
@@ -57,29 +49,30 @@ export default function Effective() {
         </div>
       </div>
 
-      {/*
-        Measured: each image is 405×309px inside a 1200px-wide, 3-column
-        row — not edge-to-edge. Matching that with the same side padding
-        as the heading block above, instead of a full-bleed grid.
-      */}
       <div className="mx-auto max-w-[1400px] px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-3">
-          {steps.map((step, i) => (
+        <div className="grid grid-cols-1 gap-px bg-[#0C0C0B]/10 md:grid-cols-3">
+          {steps.map((step, idx) => (
             <div
               key={step.number}
-              className={`flex flex-col ${i > 0 ? "md:border-l md:border-[#0C0C0B]/10" : ""}`}
+              className="flex flex-col bg-[#F3F0E9]"
+              onMouseEnter={() => setHoveredIdx(idx)}
+              onMouseLeave={() => setHoveredIdx(null)}
             >
-              <div className="group relative aspect-[405/309] w-full overflow-hidden">
+              <div className="relative aspect-[4/3] w-full overflow-hidden">
                 <Image
                   src={step.image}
                   alt={step.alt}
                   fill
-                  className="object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-110"
+                  className="object-cover"
                   sizes="(min-width: 768px) 33vw, 100vw"
+                  style={{
+                    transform: hoveredIdx === idx ? "scale(1.1)" : "scale(1)",
+                    transition: "transform 0.7s ease-out",
+                  }}
                 />
               </div>
 
-              <div className="px-0 py-10 md:px-8 md:py-12">
+              <div className="p-8 md:p-10">
                 <p className="font-display text-[60px] font-light leading-[60px] text-[#E8E4DC]">
                   {step.number}
                 </p>

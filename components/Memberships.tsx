@@ -1,23 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Button from "./Button";
-
-/**
- * Typography per WhatFont inspection:
- * - Card label ("1X / WEEK" etc.): DM Sans 400, 10px/15px, ~40% opacity.
- * - Price ("$980" etc.): Cormorant Garamond 300, 48px/48px.
- * - Sessions line ("8 sessions / month"): DM Sans 400, 10px/15px,
- *   tan at 40% opacity on dark cards; full-opacity terracotta accent on
- *   the "Most Popular" card specifically (visibly distinct in the screenshot).
- * - Card description: DM Sans 400, 14px/23px, ~50% opacity.
- * - Feature-list items: DM Sans 400, 14px/20px, cream at 70% opacity.
- * - "Membership is by application only..." paragraph: DM Sans 400,
- *   14px/23px, cream at 40% opacity.
- *
- * Assumption flagged: the teal-ish tint on the "$" in the dark-card prices
- * wasn't isolated in a WhatFont capture — implemented as a styled span so
- * it's easy to correct the exact hex if it's off. The "Most Popular" card
- * uses uniform ink text with no such accent, matching the screenshot.
- */
+import { useState } from "react";
 
 const tiers = [
   {
@@ -55,8 +40,10 @@ const features = [
 ];
 
 export default function Membership() {
+  const [imgHovered, setImgHovered] = useState(false);
+
   return (
-    <section className="bg-[#111110] font-body">
+    <section className="bg-[#111110] font-body pb-16 lg:pb-20">
       <div className="px-6 pt-16 md:px-12 md:pt-20">
         <p className="text-[10px] font-normal uppercase tracking-[0.25em] text-[#F5F2EC]/40">
           Membership
@@ -155,13 +142,21 @@ export default function Membership() {
         </ul>
 
         <div>
-          <div className="group relative h-[562px] w-[900px] max-w-full overflow-hidden">
+          <div
+            className="relative aspect-[16/10] w-full overflow-hidden cursor-pointer"
+            onMouseEnter={() => setImgHovered(true)}
+            onMouseLeave={() => setImgHovered(false)}
+          >
             <Image
               src="/images/membership.webp"
               alt="Close-up of hands racking a dumbbell in a home gym"
               fill
-              className="object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-110"
+              className="object-cover"
               sizes="(min-width: 1024px) 50vw, 100vw"
+              style={{
+                transform: imgHovered ? "scale(1.1)" : "scale(1)",
+                transition: "transform 0.7s ease-out",
+              }}
             />
           </div>
 

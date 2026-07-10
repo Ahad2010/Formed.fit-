@@ -8,12 +8,3 @@
 body {
   font-family: var(--font-body), sans-serif;
 }
-
-/* Hide any remaining 1px hairlines that appear inside the hero area */
-.hero .h-px,
-.hero [class*="w-px"],
-.hero .border-l,
-.hero .border-r {
-  display: none !important;
-  border: none !important;
-}

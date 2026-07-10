@@ -14,12 +14,12 @@ import Button from "./Button";
 export default function GetStarted() {
   return (
     <section className="relative overflow-hidden bg-[#111110] font-body">
-      <div className="absolute inset-0">
+      <div className="group absolute inset-0">
         <Image
           src="/images/get-started.webp"
           alt="Silhouette of a woman in a backbend yoga pose against a sunset over the water"
           fill
-          className="object-cover"
+          className="object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-110"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-[#111110]/50" />

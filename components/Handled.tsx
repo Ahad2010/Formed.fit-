@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 const features = [
   {
     number: "01",
@@ -32,8 +36,10 @@ const features = [
 ];
 
 export default function Handled() {
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+
   return (
-    <section className="bg-[#F3F0E9] font-body">
+    <section className="bg-[#F3F0E9] font-body pb-16 lg:pb-20">
       <div className="mx-auto max-w-[1400px] px-6 py-16 md:px-12 md:py-20">
         <p className="text-[10px] font-normal uppercase tracking-[0.25em] text-[#C2996B]">
           Why Formed
@@ -48,47 +54,35 @@ export default function Handled() {
       </div>
 
       <div className="mx-auto max-w-[1400px] px-6 md:px-12">
-        <div className="grid grid-cols-1 border-t border-[#0C0C0B]/10 md:grid-cols-3">
-          {features.map((feature, i) => (
+        <div className="grid grid-cols-1 gap-px bg-[#0C0C0B]/10 sm:grid-cols-2 md:grid-cols-3">
+          {features.map((feature, idx) => (
             <div
               key={feature.number}
-              className={`
-                group relative overflow-hidden
-                px-0 py-10 md:px-10 md:py-12
-                transition-all duration-500 ease-[cubic-bezier(.22,1,.36,1)]
-                hover:-translate-y-1 hover:shadow-xl cursor-pointer
-                ${i % 3 !== 0 ? "md:border-l md:border-[#0C0C0B]/10" : ""}
-                ${i >= 3 ? "border-t border-[#0C0C0B]/10" : ""}
-              `}
+              className="cursor-pointer p-8 md:p-10"
+              style={{
+                backgroundColor: hoveredIdx === idx ? "#E8E4DC" : "#F3F0E9",
+                transition: "background-color 0.3s ease",
+              }}
+              onMouseEnter={() => setHoveredIdx(idx)}
+              onMouseLeave={() => setHoveredIdx(null)}
             >
-              {/* Animated Hover Background */}
-              <span
-                className="
-                  absolute inset-0
-                  origin-top
-                  scale-y-0
-                  bg-[#BDBAB3]
-                  transition-transform
-                  duration-500
-                  ease-[cubic-bezier(.22,1,.36,1)]
-                  group-hover:scale-y-100
-                "
-              />
+              <p
+                className="font-display text-[48px] font-light leading-[48px]"
+                style={{
+                  color: hoveredIdx === idx ? "#C2996B" : "#C8C2B4",
+                  transition: "color 0.3s ease",
+                }}
+              >
+                {feature.number}
+              </p>
 
-              {/* Content */}
-              <div className="relative z-10">
-                <p className="font-display text-[48px] font-light leading-[48px] text-[#C8C2B4] transition-colors duration-500 group-hover:text-white">
-                  {feature.number}
-                </p>
+              <h3 className="mt-5 text-[14px] font-medium leading-[20px] text-[#0C0C0B]">
+                {feature.title}
+              </h3>
 
-                <h3 className="mt-4 text-[14px] font-medium leading-[20px] text-[#0C0C0B] transition-colors duration-500 group-hover:text-white">
-                  {feature.title}
-                </h3>
-
-                <p className="mt-2 max-w-[300px] text-[14px] font-normal leading-[23px] text-[#8C8880] transition-colors duration-500 group-hover:text-white/90">
-                  {feature.copy}
-                </p>
-              </div>
+              <p className="mt-3 max-w-[300px] text-[14px] font-normal leading-[23px] text-[#8C8880]">
+                {feature.copy}
+              </p>
             </div>
           ))}
         </div>
